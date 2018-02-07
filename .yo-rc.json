@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Zarko Susnjar",
+      "authorEmail": "zharcos@gmail.com",
+      "authorUrl": ""
+    }
+  }
+}
