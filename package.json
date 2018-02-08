@@ -2,20 +2,21 @@
   "name": "generator-ns-sca",
   "version": "1.0.0",
   "description": "NetSuite SCA code generator",
-  "homepage": "",
+  "homepage": "https://github.com/zarkosusnjar/generator-ns-sca",
   "author": {
     "name": "Zarko Susnjar",
-    "email": "zharcos@gmail.com",
-    "url": ""
+    "email": "zharcos@gmail.com"
   },
   "files": [
     "generators"
   ],
-  "main": "generators/index.js",
+  "main": "generators/app/index.js",
   "keywords": [
+    "yeoman-generator",
     "NetSuite",
     "SCA",
-    "yeoman-generator"
+    "scaffold",
+    "backbone"
   ],
   "devDependencies": {
     "yeoman-test": "^1.7.0",
@@ -28,20 +29,19 @@
     "eslint-config-prettier": "^2.4.0",
     "eslint-plugin-prettier": "^2.2.0",
     "eslint-config-xo": "^0.18.2",
-    "jest": "^22.0.6",
-    "pascal-case": "^1.1.0",
-    "param-case": "^1.1.0"
+    "jest": "^22.0.6"
   },
   "dependencies": {
     "yeoman-generator": "^2.0.1",
     "chalk": "^2.1.0",
-    "yosay": "^2.0.1"
+    "yosay": "^2.0.1",
+    "pascal-case": "^1.1.0",
+    "param-case": "^1.1.0"
   },
   "jest": {
     "testEnvironment": "node"
   },
   "scripts": {
-    "prepublish": "nsp check",
     "pretest": "eslint .",
     "precommit": "lint-staged",
     "test": "jest"
