@@ -11,10 +11,10 @@ define ('<%= moduleName %>.Router'
     'use strict';
 
     return Backbone.Router.extend({
-        
+
         routes:
         {
-            '<%= moduleName %>': '<%= moduleName %>'
+            '<%= lcModuleName %>': '<%= lcModuleName %>'
         }
 
     ,   initialize: function(application)
@@ -22,7 +22,7 @@ define ('<%= moduleName %>.Router'
             this.application  = application;
         }
 
-    ,   <%= moduleName %>: function()
+    ,   <%= lcModuleName %>: function()
         {
             console.log('ENTER <%= moduleName %> ROUTER --------------');
 

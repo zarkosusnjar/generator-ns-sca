@@ -1,0 +1,6 @@
+#<%= lcModuleName %> {
+  h1 {
+    @extend .input-label;
+    margin-top: $sc-base-margin * 4;
+  }
+}

@@ -13,16 +13,10 @@ module.exports = class extends Generator {
     );
 
     const prompts = [
-      // {
-      //   type: 'confirm',
-      //   name: 'someAnswer',
-      //   message: 'Would you like to enable this option?',
-      //   default: true
-      // },
       {
         type: 'string',
         name: 'modulePrefix',
-        message: 'Module prefix: (ec for example)',
+        message: 'Module prefix:',
         default: ''
       },
       {
@@ -36,19 +30,19 @@ module.exports = class extends Generator {
         name: 'moduleVersion',
         message: 'Module version:',
         default: '1.0.0'
-      },
-      {
-        type: 'confirm',
-        name: 'generateModel',
-        message: 'Would you like to generate example Backbone.Model?',
-        default: true
-      },
-      {
-        type: 'confirm',
-        name: 'generateCollection',
-        message: 'Would you like to generate example Backbone.Collection?',
-        default: true
       }
+      // {
+      //   type: 'confirm',
+      //   name: 'generateModel',
+      //   message: 'Would you like to generate example Backbone.Model?',
+      //   default: true
+      // },
+      // {
+      //   type: 'confirm',
+      //   name: 'generateCollection',
+      //   message: 'Would you like to generate example Backbone.Collection?',
+      //   default: true
+      // }
     ];
 
     return this.prompt(prompts).then(props => {
@@ -75,7 +69,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('router_template.Router.js'),
       this.destinationPath( moduleFolderName + '/JavaScript/' + this.props.moduleName + '.Router.js'),
-      { moduleName: this.props.moduleName }
+      { moduleName: this.props.moduleName, lcModuleName: paramCase(this.props.moduleName) }
     );
 
     this.fs.copyTpl(
@@ -87,7 +81,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(
       this.templatePath('template.tpl'),
       this.destinationPath( moduleFolderName + '/Templates/' + paramCase(this.props.moduleName) + '.tpl'),
-      { title: this.props.moduleName }
+      { moduleName: this.props.moduleName, lcModuleName: paramCase(this.props.moduleName) }
     );
   }
 

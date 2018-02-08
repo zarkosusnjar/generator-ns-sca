@@ -1,3 +1,3 @@
-<section>
-    <h1><%= title %> View Template</h1>
+<section id="<%= lcModuleName %>">
+    <h1><%= moduleName %> View Template</h1>
 </section>
